@@ -1,29 +1,25 @@
 package com.example.mobileapplication
 
 import android.os.Bundle
+import android.util.Patterns
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mobileapplication.ui.theme.MobileApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             MobileApplicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    loginPage()
                 }
             }
         }
@@ -31,17 +27,72 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun loginPage() {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var message by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center
+    ) {
+        TextField(
+            value = email,
+            onValueChange = {email = it},
+            label = { Text("ელ.ფოსტა") },
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        TextField(
+            value = password,
+            onValueChange = {password = it},
+            label = { Text("პაროლი") },
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(
+            onClick = {
+                message = if(validateInputs(email, password)) {
+                    "წარმატებული მცდელობა!"
+                } else {
+                    "წარუმატებელი მცდელობა!"
+                }
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("შესვლა")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = message,
+            color = if(message == "წარმატებული მცდელობა!") {
+                MaterialTheme.colorScheme.primary
+            } else {
+                MaterialTheme.colorScheme.error
+            }
+        )
+    }
+}
+
+fun validateInputs(email: String, password: String):Boolean {
+    return email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length >= 6
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun loginPagePreview() {
     MobileApplicationTheme {
-        Greeting("Android")
+        loginPage();
     }
 }
