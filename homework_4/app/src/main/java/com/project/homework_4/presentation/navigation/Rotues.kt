@@ -4,4 +4,6 @@ sealed class Routes(val routes: String) {
     data object FirstScreen : Routes("FirstScreen")
     data object SecondScreen : Routes("SecondScreen")
     data object SplashScreen : Routes("SplashScreen")
+    data object LoginScreen : Routes("LoginScreen")
+    data object RegisterScreen : Routes("RegisterScreen")
 }

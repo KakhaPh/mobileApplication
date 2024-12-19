@@ -2,7 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.gms.google-services") version "4.4.2" apply false
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.gms.google-services")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -53,16 +55,18 @@ android {
 }
 
 dependencies {
-    val navVersion = "2.8.5"
-    implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,7 +75,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Navigation
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
 
@@ -87,6 +93,23 @@ dependencies {
     // Retrofit
     implementation (libs.retrofit)
 
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
+
     // firebase
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth.ktx)
+
+
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.project.homework_4.presentation.navigation.Routes
 
 @Composable
 fun SecondScreen(navController: NavController) {
@@ -33,6 +34,14 @@ fun SecondScreen(navController: NavController) {
             navController.popBackStack()
         }) {
             Text("Go Back")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = {
+            navController.navigate(Routes.LoginScreen.routes)
+        }) {
+            Text("Go to Login")
         }
     }
 }
