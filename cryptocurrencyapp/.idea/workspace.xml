@@ -48,7 +48,8 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/KakhaPh/AndroidStudioProjects/cryptocurrencyapp/app/src/main/java/com/project/cryptocurrencyapp"
   },
   "keyToStringList": {
     "kotlin-gradle-user-dirs": [
@@ -56,6 +57,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KakhaPh\AndroidStudioProjects\cryptocurrencyapp\app\src\main\java\com\project\cryptocurrencyapp" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="cryptocurrencyapp.app.main" />

@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.project.cryptocurrencyapp.presentation.navigation.Routes
+import com.project.cryptocurrencyapp.ui.theme.mainColor
 import kotlinx.coroutines.delay
 
 @Composable
@@ -28,7 +29,8 @@ fun SplashScreen(navController: NavController) {
     ) {
         Text(
             text = "Crypto Currency App",
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
+            color = mainColor
         )
     }
 }
