@@ -9,5 +9,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">cryptocurrencyapp</string>
+    <string name="gcm_defaultSenderId" translatable="false">635703765618</string>
+    <string name="google_api_key" translatable="false">AIzaSyCnEghzG0UTr_A90GztzMczDSYemCIjqpE</string>
+    <string name="google_app_id" translatable="false">1:635703765618:android:012c657cb0085f9484b0eb</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCnEghzG0UTr_A90GztzMczDSYemCIjqpE</string>
+    <string name="google_storage_bucket" translatable="false">cryptocurrencyapp-33c9b.firebasestorage.app</string>
+    <string name="project_id" translatable="false">cryptocurrencyapp-33c9b</string>
     <style name="Theme.Cryptocurrencyapp" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>

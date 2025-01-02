@@ -1,6 +1,5 @@
 package com.project.cryptocurrencyapp.presentation.screen
 
-import android.window.SplashScreen
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme

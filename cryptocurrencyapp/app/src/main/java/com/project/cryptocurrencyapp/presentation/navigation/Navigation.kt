@@ -5,6 +5,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.project.cryptocurrencyapp.presentation.screen.FirstScreen
+import com.project.cryptocurrencyapp.presentation.screen.LoginScreen
+import com.project.cryptocurrencyapp.presentation.screen.RegisterScreen
+import com.project.cryptocurrencyapp.presentation.screen.SecondScreen
 import com.project.cryptocurrencyapp.presentation.screen.SplashScreen
 
 @Composable
@@ -20,6 +23,15 @@ fun Navigation() {
         }
         composable (route = Routes.FirstScreen.routes) {
             FirstScreen(navController = navController)
+        }
+        composable (route = Routes.SecondScreen.routes) {
+            SecondScreen(navController = navController)
+        }
+        composable (route = Routes.LoginScreen.routes) {
+            LoginScreen(navController = navController)
+        }
+        composable (route = Routes.RegisterScreen.routes) {
+            RegisterScreen(navController = navController)
         }
     }
 }
