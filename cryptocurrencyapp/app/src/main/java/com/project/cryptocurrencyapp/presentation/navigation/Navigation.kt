@@ -1,9 +1,13 @@
 package com.project.cryptocurrencyapp.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.project.cryptocurrencyapp.presentation.screen.CoinDetailScreen
+import com.project.cryptocurrencyapp.presentation.screen.CoinListScreen
 import com.project.cryptocurrencyapp.presentation.screen.FirstScreen
 import com.project.cryptocurrencyapp.presentation.screen.LoginScreen
 import com.project.cryptocurrencyapp.presentation.screen.RegisterScreen
@@ -32,6 +36,23 @@ fun Navigation() {
         }
         composable (route = Routes.RegisterScreen.routes) {
             RegisterScreen(navController = navController)
+        }
+        composable(route = Routes.CoinListScreen.routes) {
+            CoinListScreen(navController = navController)
+        }
+        composable(
+            route = "CoinDetailScreen/{coinId}",
+            arguments = listOf(
+                navArgument("coinId") {
+                    type = NavType.StringType
+                }
+            )
+        ) { backStackEntry ->
+            val coinId = backStackEntry.arguments?.getString("coinId")
+            CoinDetailScreen(
+                navController = navController,
+                coinId = coinId ?: ""
+            )
         }
     }
 }

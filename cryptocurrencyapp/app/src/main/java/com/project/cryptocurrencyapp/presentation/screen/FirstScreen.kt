@@ -28,14 +28,14 @@ fun FirstScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Frist Screen",
+            text = "First Screen",
             style = MaterialTheme.typography.headlineMedium,
             color = mainColor
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
             onClick = {
-                navController.navigate(Routes.SecondScreen.routes)
+                navController.navigate(Routes.LoginScreen.routes)
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = mainColor,

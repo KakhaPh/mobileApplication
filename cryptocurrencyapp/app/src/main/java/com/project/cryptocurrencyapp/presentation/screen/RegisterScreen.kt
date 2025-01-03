@@ -62,7 +62,8 @@ fun RegisterScreen(
     ) {
         Text(
             text = "Register",
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
+            color = mainColor
         )
 
         Spacer(modifier = Modifier.height(32.dp))
@@ -77,7 +78,9 @@ fun RegisterScreen(
                 unfocusedBorderColor = mainColor,
                 focusedLabelColor = mainColor,
                 unfocusedLabelColor = mainColor,
-                cursorColor = mainColor
+                cursorColor = mainColor,
+                focusedTextColor = mainColor,
+                unfocusedTextColor = mainColor
             ),
             enabled = !state.isLoading
         )
@@ -95,7 +98,9 @@ fun RegisterScreen(
                 unfocusedBorderColor = mainColor,
                 focusedLabelColor = mainColor,
                 unfocusedLabelColor = mainColor,
-                cursorColor = mainColor
+                cursorColor = mainColor,
+                focusedTextColor = mainColor,
+                unfocusedTextColor = mainColor
             ),
             enabled = !state.isLoading
         )
@@ -113,7 +118,9 @@ fun RegisterScreen(
                 unfocusedBorderColor = mainColor,
                 focusedLabelColor = mainColor,
                 unfocusedLabelColor = mainColor,
-                cursorColor = mainColor
+                cursorColor = mainColor,
+                focusedTextColor = mainColor,
+                unfocusedTextColor = mainColor
             ),
             enabled = !state.isLoading
         )

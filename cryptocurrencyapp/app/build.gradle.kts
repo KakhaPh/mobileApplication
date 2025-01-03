@@ -108,6 +108,15 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
+
+    // Gson
+    implementation(libs.gson)
+
+    // Gson Converter
+    implementation(libs.converter.gson)
+
+    // Optional but recommended for logging network calls
+    implementation(libs.logging.interceptor)
 }
 
 kapt {

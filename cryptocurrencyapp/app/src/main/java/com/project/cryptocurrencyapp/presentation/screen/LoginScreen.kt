@@ -11,13 +11,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -46,11 +44,11 @@ fun LoginScreen(
     val state = viewModel.state
 
     LaunchedEffect(state.isLoggedIn) {
-//        if (state.isLoggedIn) {
-//            navController.navigate(Routes.FirstScreen.routes) {
-//                popUpTo(Routes.LoginScreen.routes) { inclusive = true }
-//            }
-//        }
+        if (state.isLoggedIn) {
+            navController.navigate(Routes.CoinListScreen.routes) {
+                popUpTo(Routes.LoginScreen.routes) { inclusive = true }
+            }
+        }
     }
 
     Column(
@@ -78,7 +76,9 @@ fun LoginScreen(
                 unfocusedBorderColor = mainColor,
                 focusedLabelColor = mainColor,
                 unfocusedLabelColor = mainColor,
-                cursorColor = mainColor
+                cursorColor = mainColor,
+                focusedTextColor = mainColor,
+                unfocusedTextColor = mainColor
             ),
             enabled = !state.isLoading
         )
@@ -96,7 +96,9 @@ fun LoginScreen(
                 unfocusedBorderColor = mainColor,
                 focusedLabelColor = mainColor,
                 unfocusedLabelColor = mainColor,
-                cursorColor = mainColor
+                cursorColor = mainColor,
+                focusedTextColor = mainColor,
+                unfocusedTextColor = mainColor
             ),
             enabled = !state.isLoading
         )
