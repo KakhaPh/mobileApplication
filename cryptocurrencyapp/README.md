@@ -9,10 +9,10 @@ A comprehensive Android application built with Kotlin that provides users with d
 ## Table of Contents
 1. [Features](#Features)
 2. [Technologies](#Technologies)
-3. [Project Structure](#Project)
-4. [Setup and Installation](#Setup)
+3. [Structure](#Structure)
+4. [Setup](#Setup)
 5. [Upcoming](#Upcoming)
-6. [API Reference](#API)
+6. [ReferenceAPI](#ReferenceAPI)
 7. [Screenshots](#Screenshots)
 8. [Contributor](#Contributor)
 9. [Contributing](#Contributing)
@@ -36,7 +36,7 @@ A comprehensive Android application built with Kotlin that provides users with d
 - **Authentication**: Firebase Authentication
 
 
-## Project Structure
+## Structure
 ```
 src
 ├── main
@@ -64,7 +64,7 @@ src
 ```
 
 
-## Setup and Installation
+## Setup
 1. Clone the repository:
 ```bash
 git clone https://github.com/KakhaPh/mobileApplication/tree/main/cryptocurrencyapp
@@ -77,9 +77,8 @@ git clone https://github.com/KakhaPh/mobileApplication/tree/main/cryptocurrencya
 
 ## Upcoming
 - Real-time charts of single Coins
-- 
 
-## API Reference
+## ReferenceAPI
 - **CoinPaprika API**: Used for fetching cryptocurrency data
 - Endpoints: Coin List, Coin Details
 
@@ -99,7 +98,7 @@ git clone https://github.com/KakhaPh/mobileApplication/tree/main/cryptocurrencya
 ![Register Screen](screenshots/RegisterScreen.png)
 
 ### Coins List
-![Coins List](screenshots/coinsScreen.png)
+![Coins List](screenshots/CoinsScreen.png)
 
 ### Coin Detail
 ![Coin Detail](screenshots/CoinDetailScreen.png)
